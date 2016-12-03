@@ -1,0 +1,42 @@
+body {
+  line-height:1.3em;
+  width:450px;
+  margin: 8px;
+}
+
+div {
+  display: block;
+}
+
+#controls {
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#casings {
+  padding-right: 5px;
+}
+
+pre {
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  white-space: pre-wrap;
+}
+
+u {
+  border-bottom: 1px dotted #ccc;
+  text-decoration: none;
+}
+
+#error {
+  display: none;
+  margin-top: 10px;
+}
+
+#message {
+  display: none;
+  margin-top: 10px;
+}

@@ -1,0 +1,55 @@
+﻿<!DOCTYPE HTML>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-solarized-light.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" media="all" />
+  </head>
+  <body>
+    <div class="container">
+
+      <div class="col-lg-6">
+        <div class="input-group">
+          <input type="text" id="text" class="form-control" placeholder="Search for...">
+          <span class="input-group-btn">
+            <button id="translate" class="btn btn-primary" type="button">Go!</button>
+          </span>
+        </div><!-- /input-group -->
+      </div><!-- /.col-lg-6 -->
+
+      <br>
+      <div id="controls">
+        <div id="casings">
+          <label class="radio-inline">
+            <input type="radio" name="casing" value="camel">Camel</label>
+          <label class="radio-inline">
+            <input type="radio" name="casing" value="lower+underscore">Lower_</label>
+          <label class="radio-inline">
+            <input type="radio" name="casing" value="upper+underscore">Upper_</label>
+          <label class="radio-inline">
+            <input type="radio" name="casing" value="hyphen">Hyphen</label>
+        </div>
+      </div>
+
+      <div id="error" class="alert alert-danger" role="alert"></div>
+
+      <hr>
+
+      <div id="history">
+        <table class="table table-striped" style="table-layout: fixed">
+          <thead>
+            <tr>
+              <th style="width: 50%;">Original</th>
+              <th style="width: 50%;">Translated Text</th>
+            </tr>
+          </thead>
+          <tbody id="history-row"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <script src="js/lib/jquery.min.js"></script>
+    <script src="js/lib/bootstrap.min.js"></script>
+    <script src="js/translate.js"></script>
+  </body>
+</html>
