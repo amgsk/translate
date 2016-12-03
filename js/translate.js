@@ -38,12 +38,6 @@ $(() => {
    * */
   const initView = () => {
 
-    // トークンが設定されていない場合はメッセージを表示
-    if (!localStorage.getItem('token')) {
-      showError('設定ページでTokenを設定してください。');
-      $translate.disable();
-    }
-
     // 以前に実行した記法(またはデフォルト値であるcamel)を選択状態にする
     const saved_casing = localStorage.getItem('casing') || 'camel';
     $casing.each((index, element) => {
@@ -130,6 +124,11 @@ $(() => {
 
     const selected_casing = $casing.filter(':checked').val();
     const token = localStorage.getItem('token');
+
+    if (!token) {
+      showError('設定ページでTokenを設定してください。');
+      return;
+    }
 
     translate($text.val(), selected_casing, token)
       .then((data) => {
