@@ -97,7 +97,6 @@ $(() => {
         if (result && result[0].successful) {
           resolve(result[0]);
         } else {
-          debugger;
           reject('何らかのエラーが発生しました。');
         }
 
