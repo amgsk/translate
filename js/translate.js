@@ -10,6 +10,13 @@ $(() => {
   const $translate = $('#translate');
   const $error     = $('#error');
 
+  // 再翻訳ボタン
+  const reTransButton = `
+    <button type="button" class="retrans-button btn btn-xs btn-default">
+      <i class="glyphicon glyphicon-repeat"></i>
+    </button>
+  `;
+
   const mergeHistory = (data) => {
     const history = [];
 
@@ -69,8 +76,9 @@ $(() => {
         };
 
         const tableRow = `<tr>
-                           <td>${createTooltips(history)}</td>
-                           <td><pre>${history.translated_text}</pre></td>
+                           <td class="original">${createTooltips(history)}</td>
+                           <td class="translated_text"><pre>${history.translated_text}</pre></td>
+                           <td>${reTransButton}</td>
                          </tr>`;
 
         $('#history-row').append(tableRow);
@@ -78,6 +86,8 @@ $(() => {
 
       // init tooltip
       $('[data-toggle="tooltip"]').tooltip();
+
+      $text.focus();
     }
   };
 
@@ -115,6 +125,15 @@ $(() => {
   };
 
   $error.click(clearError);
+
+  /**
+   * 再翻訳ボタンクリックイベント
+   * 原文を入力部にコピーする
+   * */
+  $(document).on('click', '.retrans-button', (evt) => {
+    $text.val($(evt.target).closest('tr').find('.original').text());
+    $text.focus();
+  });
 
   /**
    * 翻訳ボタンクリックイベント
