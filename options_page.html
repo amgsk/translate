@@ -2,7 +2,6 @@
 <html lang="en-US">
 <head>
   <meta charset="UTF-8">
-  <link rel="stylesheet" type="text/css" href="css/bootstrap-solarized-light.css" media="all"/>
   <link rel="stylesheet" type="text/css" href="css/style.css" media="all"/>
 </head>
 <body>
@@ -21,6 +20,20 @@
       </span>
     </div><!-- /input-group -->
 
+    <hr>
+
+    <label>Theme</label>
+    <div class="input-group">
+      <div class="radio-inline">
+        <input type="radio" value="light" name="theme-select" id="light">
+          <label for="light">Light</label>
+      </div>
+      <div class="radio-inline">
+        <input type="radio" value="dark" name="theme-select" id="dark">
+        <label for="dark">Dark</label>
+      </div>
+    </div>
+
     <div id="error" class="alert alert-danger" role="alert"></div>
     <div id="message" class="alert alert-success" role="alert"></div>
 
@@ -35,6 +48,7 @@
 
 <script src="js/lib/jquery.min.js"></script>
 <script src="js/lib/bootstrap.min.js"></script>
+<script src="js/common.js"></script>
 <script src="js/options_page.js"></script>
 </body>
 </html>
