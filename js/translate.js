@@ -45,6 +45,8 @@ $(() => {
    * */
   const initView = () => {
 
+    common.loadThemeCss(localStorage.getItem('theme'));
+
     // 以前に実行した記法(またはデフォルト値であるcamel)を選択状態にする
     const saved_casing = localStorage.getItem('casing') || 'camel';
     $casing.each((index, element) => {
